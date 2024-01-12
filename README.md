@@ -121,3 +121,27 @@ pytest -v -s "file_name"
 
 "@pytest -m "marker_name"
 ```
+
+
+## Fixtures
+
+- For running files
+
+  ```pytest
+  
+  pytest -s 'file_name'
+  ```
+  
+- Fixtures are a powerful feature that allows you to set up pre-conditions or resources needed for your tests.
+- Fixtures are essentially functions marked with the @pytest.fixture decorator.
+
+## Setup_and_teardown
+
+### yield
+- yield statement is often used to provide a setup and teardown mechanism.
+- When a fixture includes a yield statement, the code before the yield is executed as setup.
+- The code after the yield is executed as teardown. This allows you to perform actions before and after a test using a single fixture.
+  
+### conftest.py 
+- It's a special file that can be used to define fixtures, hooks, and other configurations that are shared across multiple test files or modules within a directory.
+- When Pytest discovers a conftest.py file, it considers it as a configuration file for that directory and its subdirectories.
